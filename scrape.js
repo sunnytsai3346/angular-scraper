@@ -10,9 +10,42 @@ const puppeteer = require('puppeteer');
   const page = await browser.newPage();
 
   const routesToScrape = [
-    '/#/menu/MMM%2BSTAT',  // Status Page
+    '/#/status',  // Status Page
+    '/#/status/AllAlarms',
+    '/#/status/Versions',
+    '/#/status/Fans',
+    '/#/status/Temperatures',
+    '/#/status/System',
+    '/#/status/Lamp',
+    '/#/status/Lens',
+    '/#/status/Network',
+    '/#/status/Interlocks',
+    '/#/status/Serial',
+    '/#/status/Video',
+    '/#/status/Playback',
+    '/#/status/Scheduler',
+    '/#/status/Automation',
+    '/#/status/ChristieNAS',
+    '/#/status/Debugging',
     '/#/menu/MMM%2BABOT',  // About Page
-    // Add more if needed
+    '/#/menu/MMM%2BSERV/MMM%2BPREF/General',
+    '/#/menu/MMM%2BSERV/MMM%2BPREF/HDR',
+    '/#/menu/MMM%2BSERV/MMM%2BPREF/Alarm%20Triggers',
+    '/#/menu/MMM%2BSERV/MMM%2BPREF/Service%20Mode',
+    '/#/menu/MMM%2BSERV/MMM%2BPREF/Lens%20ILS',
+    '/#/menu/MMM%2BSERV/MMM%2BPREF/Automation',
+    '/#/menu/MMM%2BSERV/MMM%2BPREF/IMB',
+    '/#/menu/MMM%2BSERV/MMM%2BPREF/3D%20Configuration',
+    '/#/menu/MMM%2BSERV/MMM%2BPREF/Test%20Patterns',
+    '/#/menu/MMM%2BSERV/MMM%2BPREF/EDID%20File%20Import',
+    '/#/menu/MMM%2BAUTO/MMM%2BMCRE',    
+    '/#/menu/MMM%2BAUTO/MMM%2BDIPT/PLTR',
+    '/#/menu/MMM%2BAUTO/MMM%2BAUDD',
+    '/#/menu/MMM%2BAUTO/MMM%2BDLIB',
+    '/#/menu/MMM%2BCHAN',
+    '/#/menu/MMM%2BIMGS/MMM%2BILSF',
+    '/#/dashboard', //dashboard
+    
   ];
 
   const baseUrl = 'http://localhost:4200';
