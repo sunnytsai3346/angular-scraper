@@ -1,3 +1,4 @@
+const fs = require('fs');
 const puppeteer = require('puppeteer');
 
 (async () => {
@@ -15,6 +16,8 @@ const puppeteer = require('puppeteer');
   ];
 
   const baseUrl = 'http://localhost:4200';
+  const allResults = [];
+
 
   for (const route of routesToScrape) {
     const fullUrl = `${baseUrl}${route}`;
@@ -30,8 +33,18 @@ const puppeteer = require('puppeteer');
         .filter(text => text.length > 0 && text.length < 200);
     });
 
+    allResults.push({
+      route: route,
+      texts: content
+    });
+
     console.log(`Extracted from ${route}:`, content);
   }
 
   await browser.close();
+
+  // Write to output.json
+  fs.writeFileSync('output.json', JSON.stringify(allResults, null, 2), 'utf-8');
+  console.log('✅ Saved to output.json');
+  
 })();
