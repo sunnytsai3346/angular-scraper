@@ -1,0 +1,15 @@
+{
+  "name": "angular-scraper",
+  "version": "1.0.0",
+  "description": "mkdir angular-scraper\r cd angular-scraper\r npm init -y\r npm install puppeteer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^24.12.0"
+  }
+}
