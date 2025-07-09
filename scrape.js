@@ -61,9 +61,9 @@ const puppeteer = require('puppeteer');
     await new Promise(resolve => setTimeout(resolve, 2000));
 
     const content = await page.evaluate(() => {
-      return Array.from(document.querySelectorAll('body *'))
+      return Array.from(document.querySelectorAll('body *' || 'body #info-display' || 'body #copyright-text'))
         .map(el => el.innerText.trim())
-        .filter(text => text.length > 0 && text.length < 200);
+        .filter(text => text.length > 0 );
     });
 
     allResults.push({
